@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TO-DO-LIST</h1>
+
+    <input type="text" id="addingTask">
+    <button onclick="AddTask()">Add Task</button>
+    <ul id="toDoList">
+
+    </ul>
+</body>
+<script>
+        function AddTask(){
+            let addingTask = document.getElementById('addingTask').value
+            let newList = document.createElement('li')
+            newList.innerText = addingTask
+            newList.onclick = function(){
+                LineDecoration(newList)
+            }   
+            document.getElementById('toDoList').appendChild(newList)  
+             
+
+
+        }
+        function LineDecoration(itemText){
+            itemText.style.textDecorationLine = itemText.style.textDecorationLine === 'line-through' ? 'none' : 'line-through'
+        }
+        
+     
+</script>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .selected{
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>Item 1</li>
+        <li class="selected">Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <button onclick="moveLeft()">Previous</button>
+    <button onclick="moveRight()">Right</button>
+
+
+    <script>
+        function moveLeft(){
+            let selected = document.querySelector('.selected')
+            if(selected.previousElementSibling){
+                selected.classList.remove('selected')
+                selected.previousElementSibling.classList.add('selected')
+            }
+        }
+
+
+        function moveRight(){
+            let selected = document.querySelector('.selected')
+            if(selected.nextElementSibling){
+                selected.classList.remove('selected')
+                selected.nextElementSibling.classList.add('selected')
+            }
+        }
+        
+    </script>
+
+    <!-- <button onclick="HighlightChildren()">Highlight First and Last</button>
+
+    <script>
+        function HighlightChildren(){
+            let list = document.getElementById('list')
+            list.firstElementChild.classList.add("highlight")
+            list.lastElementChild.classList.add("highlight")
+
+
+        }
+    </script> -->
+    <!-- <div>
+        <p>
+            This is a paragraph <button onclick="findParent(this)">Find Parent</button>
+        </p>
+    </div>
+
+    <script>
+        function findParent(button) {
+            let parent = button.parentElement
+            alert('Parent Element is: ' + parent.tagName)
+        }
+    </script> -->
+    <!-- <ul id="shopping-list" >
+        <li>Apple</li>
+        <li>Bananas</li>
+        <li>Oranges</li>
+
+        
+
+    </ul>
+    <button onclick="removeItem()">Remove Last Item</button>
+    <button onclick="AddTask()">Adding Item</button> -->
+
+    <!-- Adding list -->
+    <!-- <script>
+        function AddTask() {
+            let newTask = document.createElement('li')
+            newTask.innerText = "New Task"
+
+            document.getElementById('shopping-list').appendChild(newTask)
+
+        }
+    </script> -->
+
+<!-- 
+    <script>
+       function changColor(){
+        let button = document.getElementById('mybutton')
+        button.style.backgroundColor = 'blue'
+
+        button.innerText = 'clicked!!'
+       }
+    </script> -->
+
+    <!-- <script>
+        function removeItem(){
+            let list = document.getElementById('shopping-list')
+
+            if(list.lastElementChild){
+                list.lastElementChild.remove( )
+            }
+        }
+    </script> -->
+
+</body>
+</html>
+
+<!-- Creating DOM ELEMENTS
+
+Syntax: 
+let element = document.createElement("tagName")
+-->
+
+<!-- Modifying DOM Elements
+
+    element.innerText - Change the text inside an element 
+    element.innerHtml - Change the HTML inside an element
+    element.style.property - changes the CSS style of an elment 
+    element.setAttribute(name, value) - set an attribute(src, href, class)
+    element.classList.add(className) - adds a CSS class to an element
+
+
+
+-->
+
+<!-- 
+    Removing DOM Elements
+
+    Syntax: 
+    element.romnove()
+ -->
+
+ <!-- 
+    DOM TRAVERSAL
+    - navigationg between elements
+
+
+    METHODS
+    .parentElement 
+    .children
+    .firstElementChild
+    .lastElementChild
+    .previousElementSibling
+    .nextElmentSibling
+  -->
